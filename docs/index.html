@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시장 동향 브리핑</title>
+<meta name="description" content="NovaFactory AI 맞춤 시장·경쟁사·정책·지원사업 뉴스 추천">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --steel:#E9EDF0; --panel:#F7F9FA; --ink:#17232B; --ink-2:#4A5A65; --rule:#C6CFD6;
+  --signal:#F2B705; --signal-ink:#3A2C00; --track:#D5DCE1; --link:#0B5E7E;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --steel:#10181D; --panel:#172229; --ink:#E4EAEE; --ink-2:#9AAAB5; --rule:#2B3942;
+    --signal:#F2B705; --signal-ink:#2A2000; --track:#26343C; --link:#6CC3E6; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --steel:#10181D; --panel:#172229; --ink:#E4EAEE; --ink-2:#9AAAB5; --rule:#2B3942;
+  --signal:#F2B705; --signal-ink:#2A2000; --track:#26343C; --link:#6CC3E6; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--steel);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  font-size:16px;line-height:1.6;font-feature-settings:"tnum";word-break:keep-all;overflow-wrap:anywhere}
+a{color:var(--link)}
+a:focus-visible{outline:3px solid var(--signal);outline-offset:2px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+
+header.top{padding:40px 0 28px;border-bottom:1px solid var(--rule)}
+.company{font-size:15px;color:var(--ink-2);margin:0}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.15;font-weight:800;letter-spacing:-0.02em;margin:6px 0 18px}
+.facts{display:flex;min-width:0;flex-wrap:wrap;gap:8px 28px;margin:0;padding:0;list-style:none;font-size:14px;color:var(--ink-2)}
+.facts b{color:var(--ink);font-weight:700;font-size:18px;margin-right:4px}
+
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;padding:32px 0 8px}
+@media (max-width:880px){.layout{grid-template-columns:minmax(0,1fr);gap:24px}}
+h2{font-size:21px;font-weight:800;letter-spacing:-0.01em;margin:0 0 4px}
+.sub{font-size:14px;color:var(--ink-2);margin:0 0 18px}
+
+/* TOP 10: 검사 라인 판독값 */
+ol.line{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+ol.line>li{display:grid;grid-template-columns:52px minmax(0,1fr) 112px;gap:0 18px;
+  padding:18px 0 20px;border-bottom:1px solid var(--rule)}
+.rank{font-size:30px;font-weight:800;line-height:1;color:var(--ink);padding-top:2px}
+.item-title{font-size:18px;font-weight:700;line-height:1.4;margin:0 0 6px}
+.item-title a{color:var(--ink);text-decoration:none}
+.item-title a:hover{text-decoration:underline;text-underline-offset:3px}
+.reason{margin:0 0 8px;color:var(--ink);max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--ink-2);margin:0}
+.chip{display:inline-block;font-size:12px;font-weight:700;padding:1px 8px;border-radius:3px;
+  border:1px solid var(--ink-2);color:var(--ink)}
+.chip.synthetic{border-style:dashed;color:var(--ink-2)}
+.chip.competitor{background:var(--ink);color:var(--steel);border-color:var(--ink)}
+.gauge{text-align:right;white-space:nowrap}
+.gauge .score{font-size:26px;font-weight:800;line-height:1}
+.gauge .of{font-size:12px;color:var(--ink-2)}
+.meter{height:8px;background:var(--track);margin-top:8px;position:relative}
+.meter i{position:absolute;inset:0 auto 0 0;background:var(--signal)}
+.meter::after{content:"";position:absolute;left:70%;top:-3px;bottom:-3px;width:1px;background:var(--ink-2)}
+.llm{font-size:12px;color:var(--ink-2);margin-top:6px;line-height:1.5}
+@media (max-width:560px){
+  ol.line>li{grid-template-columns:36px minmax(0,1fr);}
+  .rank{font-size:22px}
+  .gauge{grid-column:2;text-align:left;display:flex;align-items:center;gap:10px;margin-top:10px}
+  .gauge .meter{flex:1;margin-top:0}
+  .gauge .llm{display:none}
+}
+
+/* 카테고리 통계 */
+aside section{background:var(--panel);border:1px solid var(--rule);padding:18px 18px 16px;margin-bottom:20px}
+.bars{list-style:none;margin:0;padding:0}
+.bars li{margin:0 0 14px}
+.bars .row{display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px}
+.bars .row span:last-child{color:var(--ink-2)}
+.bar{height:6px;background:var(--track);position:relative;margin-top:3px}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--ink-2)}
+.bar.rec i{background:var(--signal)}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--ink-2);margin:4px 0 0}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;margin-right:6px;vertical-align:-1px}
+.legend .l1::before{background:var(--ink-2)} .legend .l2::before{background:var(--signal)}
+dl.method{margin:0;font-size:14px}
+dl.method dt{font-weight:700;margin-top:10px}
+dl.method dt:first-child{margin-top:0}
+dl.method dd{margin:2px 0 0;color:var(--ink-2)}
+
+/* 11~30 */
+.rest{padding:32px 0 8px}
+.table-wrap{overflow-x:auto;border-top:2px solid var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 10px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:13px;color:var(--ink-2);font-weight:600}
+td.n{font-weight:800;width:36px}
+td.s{font-weight:700;white-space:nowrap;width:56px}
+td.c{white-space:nowrap;width:80px}
+td a{color:var(--ink);font-weight:600;text-decoration:none}
+td a:hover{text-decoration:underline}
+td .r{display:block;color:var(--ink-2);font-size:13px;margin-top:2px}
+@media (max-width:560px){th.h-src,td.src,th.h-cat,td.c{display:none}}
+
+footer{padding:28px 0 48px;font-size:13px;color:var(--ink-2)}
+footer p{margin:0 0 6px;max-width:80ch}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <p class="company">NovaFactory AI / 제조업 AI 비전 품질검사</p>
+  <h1>이번 주 먼저 볼 시장 뉴스 30건</h1>
+  <ul class="facts">
+    <li><b>1,586</b>건 수집·정제</li>
+    <li><b>30</b>건 추천</li>
+    <li><b>60</b>건 Gemini 재평가</li>
+    <li>2026년 09월 19일 15:47 생성</li>
+  </ul>
+</div></header>
+
+<main class="wrap">
+  <div class="layout">
+    <section aria-labelledby="top10">
+      <h2 id="top10">TOP 10</h2>
+      <p class="sub">점수는 100점 만점입니다. 게이지의 세로선은 70점 기준선입니다.</p>
+      <ol class="line">
+<li>
+  <div class="rank">1</div>
+  <div>
+    <h3 class="item-title"><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE9oNWIzNERLa0JJRUVDUV94alhDQ0lfNkl4dnlJR0NPaHl3MzVEckFjWlZZYkNJdVR1UHQxc3AtQlRtRGZMWm9YamtoVXFlNHVzTGRDZktNRm84Tm5uMGppMkVXbXZNOUpESTFVeGRnMC1LZ9IBckFVX3lxTE9oNWIzNERLa0JJRUVDUV94alhDQ0lfNkl4dnlJR0NPaHl3MzVEckFjWlZZYkNJdVR1UHQxc3AtQlRtRGZMWm9YamtoVXFlNHVzTGRDZktNRm84Tm5uMGppMkVXbXZNOUpESTFVeGRnMC1LZw?oc=5" target="_blank" rel="noopener">공정 자동화 넘어 &#x27;제조AI&#x27;로… 부산, 스마트공장 2.0 대전환 속도</a></h3>
+    <p class="reason">부산 지역 스마트공장 지원사업 정보를 확인하고 지역 중소 제조기업 대상 비전 검사 구축 영업을 추진해야 합니다.</p>
+    <p class="meta"><span class="chip">지원사업</span>
+      <span>폴리뉴스 Polinews</span><span>2026-09-18</span>
+      <a href="https://news.google.com/rss/articles/CBMickFVX3lxTE9oNWIzNERLa0JJRUVDUV94alhDQ0lfNkl4dnlJR0NPaHl3MzVEckFjWlZZYkNJdVR1UHQxc3AtQlRtRGZMWm9YamtoVXFlNHVzTGRDZktNRm84Tm5uMGppMkVXbXZNOUpESTFVeGRnMC1LZ9IBckFVX3lxTE9oNWIzNERLa0JJRUVDUV94alhDQ0lfNkl4dnlJR0NPaHl3MzVEckFjWlZZYkNJdVR1UHQxc3AtQlRtRGZMWm9YamtoVXFlNHVzTGRDZktNRm84Tm5uMGppMkVXbXZNOUpESTFVeGRnMC1LZw?oc=5" target="_blank" rel="noopener">원문 보기</a></p>
+  </div>
+  <div class="gauge">
+    <div><span class="score">76.5</span> <span class="of">/100</span></div>
+    <div class="meter" role="img" aria-label="점수 76.5/100"><i style="width:76.5%"></i></div>
+    <div class="llm" title="Gemini 평가: 관련성/중요도/대응 필요성 (1~5)">관련성 4 · 중요도 5<br>대응 필요 5 <span aria-hidden="true">(5점 척도)</span></div>
+  </div>
+</li>
+<li>
+  <div class="rank">2</div>
+  <div>
+    <h3 class="item-title"><a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE1qN29LQXk0OFR4dVU1WmZwUUpmT2lETEEySnpObWUyWGtqR1cyclhLcmlDMjIzLUZuOFpBaHM2VWZKR1J5cUVIdHlNVENreGNqVWZjY0V0YzZKZWEyVUxEbVRUN3dkTEwyYUZvWUpBSQ?oc=5" target="_blank" rel="noopener">부산 제조업, 데이터와 AI로 새 길을 연다</a></h3>
+    <p class="reason">부산시의 제조 AI 지원 정책을 활용해 현지 중소·중견 기업 대상 스마트팩토리 사업 제안을 서둘러야 합니다.</p>
+    <p class="meta"><span class="chip">지원사업</span>
+      <span>데일리한국</span><span>2026-09-17</span>
+      <a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE1qN29LQXk0OFR4dVU1WmZwUUpmT2lETEEySnpObWUyWGtqR1cyclhLcmlDMjIzLUZuOFpBaHM2VWZKR1J5cUVIdHlNVENreGNqVWZjY0V0YzZKZWEyVUxEbVRUN3dkTEwyYUZvWUpBSQ?oc=5" target="_blank" rel="noopener">원문 보기</a></p>
+  </div>
+  <div class="gauge">
+    <div><span class="score">76.5</span> <span class="of">/100</span></div>
+    <div class="meter" role="img" aria-label="점수 76.5/100"><i style="width:76.5%"></i></div>
+    <div class="llm" title="Gemini 평가: 관련성/중요도/대응 필요성 (1~5)">관련성 4 · 중요도 5<br>대응 필요 5 <span aria-hidden="true">(5점 척도)</span></div>
+  </div>
+</li>
+<li>
+  <div class="rank">3</div>
+  <div>
+    <h3 class="item-title"><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTFBDcnB6SEZRcXRSNEI1dFQxdnoyR19FckVqNHpLM2U1aXd2WWVxaDRFWnpWWENaNFR6SzZNcnpQZUxRUUhNLTRmVXREcHZtaGhIRG5YdzFPb2Y0WEFELWJQLThTNHJyQlUxZUljSzlKNW3SAXRBVV95cUxOYVdPVVZ1cEg2eXBNak9pcWZlNDh3Xy1RNTYwcWd6aEd6bnhjSXlBeUlLYmx1dng1QW5ta1NkUjZndjBHbVY0WTNXbmRET19JWEl5NENWdDFCamFWTTZHcUtNYW5hSUpwQUFBamhGaVBqeTlRVQ?oc=5" target="_blank" rel="noopener">피지컬 AI·제조 AX의 확산… 세이지, 건설기계 업종 AI 솔루션 실증 사업 착수</a></h3>
+    <p class="reason">세이지의 건설기계 AI 실증 사례를 분석하여 특정 제조 업종 맞춤형 비전 검사 솔루션 영업을 강화해야 합니다.</p>
+    <p class="meta"><span class="chip">시장</span> <span class="chip competitor">세이지</span>
+      <span>한국데이터경제신문</span><span>2026-07-29</span>
+      <a href="https://news.google.com/rss/articles/CBMicEFVX3lxTFBDcnB6SEZRcXRSNEI1dFQxdnoyR19FckVqNHpLM2U1aXd2WWVxaDRFWnpWWENaNFR6SzZNcnpQZUxRUUhNLTRmVXREcHZtaGhIRG5YdzFPb2Y0WEFELWJQLThTNHJyQlUxZUljSzlKNW3SAXRBVV95cUxOYVdPVVZ1cEg2eXBNak9pcWZlNDh3Xy1RNTYwcWd6aEd6bnhjSXlBeUlLYmx1dng1QW5ta1NkUjZndjBHbVY0WTNXbmRET19JWEl5NENWdDFCamFWTTZHcUtNYW5hSUpwQUFBamhGaVBqeTlRVQ?oc=5" target="_blank" rel="noopener">원문 보기</a></p>
+  </div>
+  <div class="gauge">
+    <div><span class="score">74.6</span> <span class="of">/100</span></div>
+    <div class="meter" role="img" aria-label="점수 74.6/100"><i style="width:74.6%"></i></div>
+    <div class="llm" title="Gemini 평가: 관련성/중요도/대응 필요성 (1~5)">관련성 4 · 중요도 4<br>대응 필요 3 <span aria-hidden="true">(5점 척도)</span></div>
+  </div>
+</li>
+<li>
+  <div class="rank">4</div>
+  <div>
+    <h3 class="item-title"><a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE9aMEtKc05SR2dlNldLa1NGTU14WVBEX1E3blVNOFZja2JwNVIwU1pSYWJHRmF0WjNhNHBJTTRnc0VvRGNzNXh0TWM5WE01cU5nQ2MzWXd0Y0EyT1JFUmQ5VUJPaHBqWFI5?oc=5" target="_blank" rel="noopener">마키나락스, 산업 AI 파트너십 본격화…다겸과 AI 품질검사·예지보전 솔루션 공동 개발</a></h3>
+    <p class="reason">경쟁 솔루션 개발 동향을 모니터링하고 차별화된 비전 기반 불량 탐지 SaaS 기능 개발을 추진해야 합니다.</p>
+    <p class="meta"><span class="chip">시장</span> <span class="chip competitor">마키나락스</span>
+      <span>paxetv.com</span><span>2026-07-01</span>
+      <a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE9aMEtKc05SR2dlNldLa1NGTU14WVBEX1E3blVNOFZja2JwNVIwU1pSYWJHRmF0WjNhNHBJTTRnc0VvRGNzNXh0TWM5WE01cU5nQ2MzWXd0Y0EyT1JFUmQ5VUJPaHBqWFI5?oc=5" target="_blank" rel="noopener">원문 보기</a></p>
+  </div>
+  <div class="gauge">
+    <div><span class="score">72.2</span> <span class="of">/100</span></div>
+    <div class="meter" role="img" aria-label="점수 72.2/100"><i style="width:72.2%"></i></div>
+    <div class="llm" title="Gemini 평가: 관련성/중요도/대응 필요성 (1~5)">관련성 5 · 중요도 4<br>대응 필요 3 <span aria-hidden="true">(5점 척도)</span></div>
+  </div>
+</li>
+<li>
+  <div class="rank">5</div>
+  <div>
+    <h3 class="item-title"><a href="https://news.google.com/rss/articles/CBMiRkFVX3lxTE9mNW1TdVRlWU1tQ3RGQ0FSYmJTTEMtT0l1cUE4SUtLTnc3akRYWDFJeHNZWG1MbGtHTTNWQ2tjSkFfVnk1SXfSAWJBVV95cUxNZEoxUnNxWkk0dzFHN3ZWa3RHUUlmeGQ3Q3RHZzZQY3Jycll0b3FWN1Qwc3h5c3JYWWp4QldmaDZ6ZVNVcnVjVDNkRktJVHJzbktmcUgtbHgxV2ZaLTZEejJJZw?oc=5" target="_blank" rel="noopener">AI가 불량 잡고 보고서까지 쓴다…지미션, 제조 AX 플랫폼 개발</a></h3>
+    <p class="reason">당사 핵심 기능인 불량 탐지와 보고서 자동화와 동일한 경쟁 제품이 출시되어 차별화 전략을 즉시 점검해야 합니다.</p>
+    <p class="meta"><span class="chip">기술동향</span>
+      <span>daenews.co.kr</span><span>2026-07-27</span>
+      <a href="https://news.google.com/rss/articles/CBMiRkFVX3lxTE9mNW1TdVRlWU1tQ3RGQ0FSYmJTTEMtT0l1cUE4SUtLTnc3akRYWDFJeHNZWG1MbGtHTTNWQ2tjSkFfVnk1SXfSAWJBVV95cUxNZEoxUnNxWkk0dzFHN3ZWa3RHUUlmeGQ3Q3RHZzZQY3Jycll0b3FWN1Qwc3h5c3JYWWp4QldmaDZ6ZVNVcnVjVDNkRktJVHJzbktmcUgtbHgxV2ZaLTZEejJJZw?oc=5" target="_blank" rel="noopener">원문 보기</a></p>
+  </div>
+  <div class="gauge">
+    <div><span class="score">71.3</span> <span class="of">/100</span></div>
+    <div class="meter" role="img" aria-label="점수 71.3/100"><i style="width:71.3%"></i></div>
+    <div class="llm" title="Gemini 평가: 관련성/중요도/대응 필요성 (1~5)">관련성 5 · 중요도 5<br>대응 필요 5 <span aria-hidden="true">(5점 척도)</span></div>
+  </div>
+</li>
+<li>
+  <div class="rank">6</div>
+  <div>
+    <h3 class="item-title"><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE5fMG9GaDZRREZ3RmFXZGUtT1IxVzRhQjBWQVgtQmxWVEVmWG93Unp5UGU3NmFKUEFibm1iV09yNUVnZ2JjVVFSZFZGRm8xVy1sWmZTckUtQkJuS19uNVdPeWViNkZ2RVo1S3pYRXd5bUZHRzNr0gF0QVVfeXFMTl8wb0ZoNlFERndGYVdkZS1PUjFXNGFCMFZBWC1CbFZURWZYb3dSenlQZTc2YUpQQWJubWJXT3I1RWdnYmNVUVJkVkZGbzFXLWxaZlNyRS1CQm5LX241V095ZWI2RnZFWjVLelhFd3ltRkdHM2s?oc=5" target="_blank" rel="noopener">부산테크노파크, 스마트공장 넘어 ‘제조AI·자율형공장’ 전환 지원 강화</a></h3>
+    <p class="reason">부산테크노파크의 지원사업 대상 기업들을 파악하고 스마트공장 구축 연계 제휴 및 영업을 신속히 추진해야 합니다.</p>
+    <p class="meta"><span class="chip">지원사업</span>
+      <span>이뉴스투데이</span><span>2026-09-18</span>
+      <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE5fMG9GaDZRREZ3RmFXZGUtT1IxVzRhQjBWQVgtQmxWVEVmWG93Unp5UGU3NmFKUEFibm1iV09yNUVnZ2JjVVFSZFZGRm8xVy1sWmZTckUtQkJuS19uNVdPeWViNkZ2RVo1S3pYRXd5bUZHRzNr0gF0QVVfeXFMTl8wb0ZoNlFERndGYVdkZS1PUjFXNGFCMFZBWC1CbFZURWZYb3dSenlQZTc2YUpQQWJubWJXT3I1RWdnYmNVUVJkVkZGbzFXLWxaZlNyRS1CQm5LX241V095ZWI2RnZFWjVLelhFd3ltRkdHM2s?oc=5" target="_blank" rel="noopener">원문 보기</a></p>
+  </div>
+  <div class="gauge">
+    <div><span class="score">70.5</span> <span class="of">/100</span></div>
+    <div class="meter" role="img" aria-label="점수 70.5/100"><i style="width:70.5%"></i></div>
+    <div class="llm" title="Gemini 평가: 관련성/중요도/대응 필요성 (1~5)">관련성 4 · 중요도 5<br>대응 필요 5 <span aria-hidden="true">(5점 척도)</span></div>
+  </div>
+</li>
+<li>
+  <div class="rank">7</div>
+  <div>
+    <h3 class="item-title"><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE0zNkNjNDB2WXU2RVlIMEtlNURvLUEzVTdJb2F6WFZLakVZb0trU2k0bUFpVGU2REpIc3FLQXpSRlhEWVdGZWhwTTNQTkljQ0tRM3Q3QjNna0xBcG8wVENJanBxSEY5TFZYOWYtaVBn0gFyQVVfeXFMTS0xMkdzTzRrZnBhS1BSbFVpZWl0Y28tUlRWSHR2YW9IRDhEMHVXbUZmOWd4clR0dWx0dG5aMHc0ckRnT2pSYzVBVkd3VGpoel9zODNkX0RZQkNBRE5hLWVZQkRabUQ2RlpwOVhaSExmTUZB?oc=5" target="_blank" rel="noopener">버넥트, VLM 기반 ‘Inspect Assembly’로 제조 조립검사 AI 전환 가속화</a></h3>
+    <p class="reason">버넥트의 VLM 기반 조립검사 솔루션을 모니터링하고 자사 비전 검사 경쟁력을 점검해야 합니다.</p>
+    <p class="meta"><span class="chip">시장</span>
+      <span>테크데일리</span><span>2026-09-17</span>
+      <a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE0zNkNjNDB2WXU2RVlIMEtlNURvLUEzVTdJb2F6WFZLakVZb0trU2k0bUFpVGU2REpIc3FLQXpSRlhEWVdGZWhwTTNQTkljQ0tRM3Q3QjNna0xBcG8wVENJanBxSEY5TFZYOWYtaVBn0gFyQVVfeXFMTS0xMkdzTzRrZnBhS1BSbFVpZWl0Y28tUlRWSHR2YW9IRDhEMHVXbUZmOWd4clR0dWx0dG5aMHc0ckRnT2pSYzVBVkd3VGpoel9zODNkX0RZQkNBRE5hLWVZQkRabUQ2RlpwOVhaSExmTUZB?oc=5" target="_blank" rel="noopener">원문 보기</a></p>
+  </div>
+  <div class="gauge">
+    <div><span class="score">70.5</span> <span class="of">/100</span></div>
+    <div class="meter" role="img" aria-label="점수 70.5/100"><i style="width:70.5%"></i></div>
+    <div class="llm" title="Gemini 평가: 관련성/중요도/대응 필요성 (1~5)">관련성 5 · 중요도 5<br>대응 필요 4 <span aria-hidden="true">(5점 척도)</span></div>
+  </div>
+</li>
+<li>
+  <div class="rank">8</div>
+  <div>
+    <h3 class="item-title"><a href="https://news.google.com/rss/articles/CBMic0FVX3lxTE84MG10VjlxR2JJTUc4Q0NPNmtReHBXdmYtUm10NFliQWZUUWtRSkFWVFVvS1Z0dmFjUnVIc213MVZzMnNVOXp0RTB2OEJWVzVNQmhMeVdJTUNQVmdCbk4wVHFmdDNQMzBBcFlqTHFER2paV1XSAXdBVV95cUxQLXd4cUdpYWMtckVvaExzaVJFR196eEVWZVB1eDZWa19IZWt0WVZpcllrQzJNdU92RkhFQlNpaW9taHhsazJkaEhDR0l3UUpCeEJTdWd2VktWUTFmdlpkRXJHdGlqNVNwVHdDNEhPblVIdHQ0dWpUTQ?oc=5" target="_blank" rel="noopener">눈으로 보고 스스로 판단하는 AI…피아이이, 제조 지능화 시장 공략</a></h3>
+    <p class="reason">피아이이의 제조 지능화 공략 전략을 분석하여 중소·중견기업 타깃 마케팅을 강화해야 합니다.</p>
+    <p class="meta"><span class="chip">시장</span>
+      <span>pinpointnews.co.kr</span><span>2026-09-05</span>
+      <a href="https://news.google.com/rss/articles/CBMic0FVX3lxTE84MG10VjlxR2JJTUc4Q0NPNmtReHBXdmYtUm10NFliQWZUUWtRSkFWVFVvS1Z0dmFjUnVIc213MVZzMnNVOXp0RTB2OEJWVzVNQmhMeVdJTUNQVmdCbk4wVHFmdDNQMzBBcFlqTHFER2paV1XSAXdBVV95cUxQLXd4cUdpYWMtckVvaExzaVJFR196eEVWZVB1eDZWa19IZWt0WVZpcllrQzJNdU92RkhFQlNpaW9taHhsazJkaEhDR0l3UUpCeEJTdWd2VktWUTFmdlpkRXJHdGlqNVNwVHdDNEhPblVIdHQ0dWpUTQ?oc=5" target="_blank" rel="noopener">원문 보기</a></p>
+  </div>
+  <div class="gauge">
+    <div><span class="score">70.5</span> <span class="of">/100</span></div>
+    <div class="meter" role="img" aria-label="점수 70.5/100"><i style="width:70.5%"></i></div>
+    <div class="llm" title="Gemini 평가: 관련성/중요도/대응 필요성 (1~5)">관련성 5 · 중요도 5<br>대응 필요 4 <span aria-hidden="true">(5점 척도)</span></div>
+  </div>
+</li>
+<li>
+  <div class="rank">9</div>
+  <div>
+    <h3 class="item-title"><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPRkRsd2JRb1ZqUzNxY3BSMGtIV28xNUtRWGtWZW1pWjFRaGxaMzBxOVZRWlgybERSTzFMZFFxbXFtdjFTVkJzMlpKTFdtTTJtUVAtNW1yZEQ1OG9tS0xLdXFZbzJmLXpGaEEzdFh6UXpKVjZ4WXRBeW9yVDFaLU1nX0ZfVHZkZFHSAXtBVV95cUxObDdpcFlTTFFVbXMxV01xbzFHRkd2RWwtV2wzM0dQaDBBSzduSkVGbWZ3UnV3b0c4dlFFSjNQRjZtUng5c1dmZXpKcGxwcFlfNjRxM3ZVSmdsb1RPU2ZQRUVXRWZJX05lZWFHYWtkM1d0OWJ0WXp0czJsVDg?oc=5" target="_blank" rel="noopener">[AISE 2026]“인건비 부담·품질 편차 한 번에 잡는다”...에이아이매틱스, 소량 데이터 기반 비전 AI ‘AIM-T1’ 제시</a></h3>
+    <p class="reason">소량 데이터 기반 비전 AI 기술 출시 동향을 파악하고 자사 불량 탐지 SaaS의 소량 데이터 학습 성능을 고도화해야 합니다.</p>
+    <p class="meta"><span class="chip">경쟁사</span>
+      <span>디지틀조선일보</span><span>2026-08-24</span>
+      <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPRkRsd2JRb1ZqUzNxY3BSMGtIV28xNUtRWGtWZW1pWjFRaGxaMzBxOVZRWlgybERSTzFMZFFxbXFtdjFTVkJzMlpKTFdtTTJtUVAtNW1yZEQ1OG9tS0xLdXFZbzJmLXpGaEEzdFh6UXpKVjZ4WXRBeW9yVDFaLU1nX0ZfVHZkZFHSAXtBVV95cUxObDdpcFlTTFFVbXMxV01xbzFHRkd2RWwtV2wzM0dQaDBBSzduSkVGbWZ3UnV3b0c4dlFFSjNQRjZtUng5c1dmZXpKcGxwcFlfNjRxM3ZVSmdsb1RPU2ZQRUVXRWZJX05lZWFHYWtkM1d0OWJ0WXp0czJsVDg?oc=5" target="_blank" rel="noopener">원문 보기</a></p>
+  </div>
+  <div class="gauge">
+    <div><span class="score">70.0</span> <span class="of">/100</span></div>
+    <div class="meter" role="img" aria-label="점수 70.0/100"><i style="width:70.0%"></i></div>
+    <div class="llm" title="Gemini 평가: 관련성/중요도/대응 필요성 (1~5)">관련성 5 · 중요도 4<br>대응 필요 4 <span aria-hidden="true">(5점 척도)</span></div>
+  </div>
+</li>
+<li>
+  <div class="rank">10</div>
+  <div>
+    <h3 class="item-title"><a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1TY0NVei1KcmtKNXdZaVdYeF9BNzlUQi1mRElSNk1rNVFfa3ctUG9nMVNzSnpYWEtVcTh1SnpJSEUyVkl2bWNFT1hiNGZ3b3FVVWdnbUNqclhKVG9OMnhzdHNBNmNiUG8?oc=5" target="_blank" rel="noopener">AI가 이끄는 제조업의 대전환, 청사진 나왔다....정부, 2030년까지 민·관 합동 20조원 투자</a></h3>
+    <p class="reason">정부의 대규모 제조 AI 투자 계획에 발맞춰, 중소기업 대상 스마트공장 구축 지원 사업 연계 영업을 강화해야 합니다.</p>
+    <p class="meta"><span class="chip">정책</span>
+      <span>인공지능신문</span><span>2026-06-29</span>
+      <a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1TY0NVei1KcmtKNXdZaVdYeF9BNzlUQi1mRElSNk1rNVFfa3ctUG9nMVNzSnpYWEtVcTh1SnpJSEUyVkl2bWNFT1hiNGZ3b3FVVWdnbUNqclhKVG9OMnhzdHNBNmNiUG8?oc=5" target="_blank" rel="noopener">원문 보기</a></p>
+  </div>
+  <div class="gauge">
+    <div><span class="score">67.9</span> <span class="of">/100</span></div>
+    <div class="meter" role="img" aria-label="점수 67.9/100"><i style="width:67.9%"></i></div>
+    <div class="llm" title="Gemini 평가: 관련성/중요도/대응 필요성 (1~5)">관련성 5 · 중요도 5<br>대응 필요 5 <span aria-hidden="true">(5점 척도)</span></div>
+  </div>
+</li>
+      </ol>
+    </section>
+
+    <aside>
+      <section aria-labelledby="cats">
+        <h2 id="cats">카테고리별 건수</h2>
+        <p class="sub">전체 수집 중 비율과 추천 30건 중 비율</p>
+        <ul class="bars"><li>
+  <div class="row"><span>시장</span><span>수집 556 (35%) / 추천 10 (33%)</span></div>
+  <div class="bar" role="img" aria-label="시장 수집 비율 35%"><i style="width:35.1%"></i></div>
+  <div class="bar rec" role="img" aria-label="시장 추천 비율 33%"><i style="width:33.3%"></i></div>
+</li>
+<li>
+  <div class="row"><span>경쟁사</span><span>수집 154 (10%) / 추천 7 (23%)</span></div>
+  <div class="bar" role="img" aria-label="경쟁사 수집 비율 10%"><i style="width:9.7%"></i></div>
+  <div class="bar rec" role="img" aria-label="경쟁사 추천 비율 23%"><i style="width:23.3%"></i></div>
+</li>
+<li>
+  <div class="row"><span>정책</span><span>수집 119 (8%) / 추천 5 (17%)</span></div>
+  <div class="bar" role="img" aria-label="정책 수집 비율 8%"><i style="width:7.5%"></i></div>
+  <div class="bar rec" role="img" aria-label="정책 추천 비율 17%"><i style="width:16.7%"></i></div>
+</li>
+<li>
+  <div class="row"><span>지원사업</span><span>수집 390 (25%) / 추천 7 (23%)</span></div>
+  <div class="bar" role="img" aria-label="지원사업 수집 비율 25%"><i style="width:24.6%"></i></div>
+  <div class="bar rec" role="img" aria-label="지원사업 추천 비율 23%"><i style="width:23.3%"></i></div>
+</li>
+<li>
+  <div class="row"><span>기술동향</span><span>수집 367 (23%) / 추천 1 (3%)</span></div>
+  <div class="bar" role="img" aria-label="기술동향 수집 비율 23%"><i style="width:23.1%"></i></div>
+  <div class="bar rec" role="img" aria-label="기술동향 추천 비율 3%"><i style="width:3.3%"></i></div>
+</li></ul>
+        <p class="legend"><span class="l1">수집</span><span class="l2">추천</span></p>
+      </section>
+      <section aria-labelledby="how">
+        <h2 id="how">점수 계산 방식</h2>
+        <dl class="method">
+          <dt>규칙 점수</dt><dd>keyword 30, company 30, competitor 15, funding 15, recency 10 (합계 100)</dd>
+          <dt>LLM 평가</dt><dd>규칙 점수 60% + Gemini 평가 40%. Gemini는 기업 관련성, 사업 중요도, 대응 필요성을 1~5로 평가하고 추천 이유를 작성했습니다. 모델: gemini-3.5-flash, gemini-3.6-flash.</dd>
+          <dt>선정 규칙</dt><dd>같은 사건을 다룬 기사는 1건만, 카테고리당 최대 10건</dd>
+          <dt>경쟁사 기준</dt><dd>VisionForge, InspectAI, FactoryMind, QualiBot (실제 기사 없음 → 비전검사 기업 뉴스로 보완)</dd>
+        </dl>
+      </section>
+    </aside>
+  </div>
+
+  <section class="rest" aria-labelledby="rest">
+    <h2 id="rest">11~30위</h2>
+    <p class="sub">제목을 누르면 원문이 새 탭에서 열립니다.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>순위</th><th>제목과 추천 이유</th><th class="h-cat">분류</th><th class="h-src">출처</th><th>점수</th></tr></thead>
+      <tbody><tr>
+  <td class="n">11</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JWS1sS1ozVnJhbWtkejVBdEdtZHIxMXI0c0p3bS1CNTlCd3FwY1lyX3BSem00WThLWnpTeXZIQXBic0g5Wkw1V2FwNmpidWRjV2VXbDNYUmtlUdIBX0FVX3lxTE1fRXBxZDF0Nmowa0EyNjVhSDFub3VhQjZkR1ZneUxJV2RLcVVjSkVvbERxaWRWRTRJbXQ2cVJJVWJScHA2UzY0SmlfQk55OW00bFUxeWEtZnA1a0NJUVBF?oc=5" target="_blank" rel="noopener">정부, 제조 AI 전환 ‘M.AX 청사진’도 공개</a>
+      <span class="r">정부의 제조 AI 전환 정책에 부합하는 비전 검사 및 품질 리포트 자동화 솔루션의 정부 과제 참여를 추진해야 합니다.</span></td>
+  <td class="c">정책</td>
+  <td class="src">경향신문<span class="r">2026-06-29</span></td>
+  <td class="s">67.9</td>
+</tr><tr>
+  <td class="n">12</td>
+  <td><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE1NYVdPMTRRVHpWWjVHMHBzdTB0bHdtc2M2SFlvNDNQWmVhVXVkYTJNelZIZzd5ZjhrQkQxbm5hRDZ4U3NVSXd1cjl0Z2dMaTNLNmNRRVYyMGZYV192YzFvVnl1bFJRUk1mNkgyd9IBckFVX3lxTE5rVk5WMjlTUi1pa2xKYTFKc08xc1gwZGpkTENZZ2ZLMTdQSnljd3NiVV9HYjBVek9HQ1lMX0V5MnVucktndm1qeXJYYzlDRnlpRGZVRnhCMlliUXRYa1FiNmF5S193VnBaTlMzNlZJVjVDQQ?oc=5" target="_blank" rel="noopener">서큘러스, &#x27;DTF 2026&#x27;서 엣지 AI 안전·품질검사 솔루션 공개 - 머니투데이</a>
+      <span class="r">서큘러스의 엣지 AI 품질검사 솔루션을 분석하고 자사 SaaS 제품 차별화 포인트를 확보해야 합니다.</span></td>
+  <td class="c">시장</td>
+  <td class="src">mt.co.kr<span class="r">2026-08-25</span></td>
+  <td class="s">67.7</td>
+</tr><tr>
+  <td class="n">13</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE1hR1FyeFl0cjRzTkhuOUg5eXF5azYyZGFtdTZzc0pGeGRkSTlocFFrRVRhdHlIa3NyNFZBck1VZ3pweVBqWU9GZDl2ME11ZXBKNVVrdHhB?oc=5" target="_blank" rel="noopener">[2026 하반기 혁신 IT 대상] 엑타스, AI 비전 기반 정제 품질검사 기술</a>
+      <span class="r">제약 정제 등 특화 업종의 비전 검사 기술 동향을 분석해 자사 솔루션의 업종별 특화 기능을 강화해야 합니다.</span></td>
+  <td class="c">시장</td>
+  <td class="src">중앙일보<span class="r">2026-09-01</span></td>
+  <td class="s">67.5</td>
+</tr><tr>
+  <td class="n">14</td>
+  <td><a href="https://news.google.com/rss/articles/CBMickFVX3lxTFBMNHpCRVhybE1mYS0yVjJ1WEIxY1ZSSXlfQkt0Z2dSQWc1MWJqaWlfUEJNZHJPUkRaRVZJeU5UbDBRN3pUNWxNR0RMZUpycDMzeTdRdmRfaFRYYXNFcjM2NWhhV0xZV0RGS0ZRV2NwNXlCdw?oc=5" target="_blank" rel="noopener">제조업 AI 도입률 4%···&quot;현장 데이터 99%는 쓰고 버려져&quot;</a>
+      <span class="r">버려지는 현장 데이터를 활용하는 품질 리포트 자동화 솔루션의 마케팅 메시지를 강화할 필요가 있습니다.</span></td>
+  <td class="c">시장</td>
+  <td class="src">시사저널e<span class="r">2026-07-23</span></td>
+  <td class="s">65.4</td>
+</tr><tr>
+  <td class="n">15</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiTkFVX3lxTE1XWDRiWXd1ejgwcGxaN2VLbnNIM1d1cnJKLUJmUTdadXBDSlBxRFVtaTFEMnJHQTBCNHVHZmZVYTlyS3NZbDRlVDNRZHdaZw?oc=5" target="_blank" rel="noopener">포항, &#x27;철강 공정 제조데이터&#x27;로 AX 속도…학습데이터셋 구축·현장 실증 본격화</a>
+      <span class="r">포항 철강 데이터셋 구축 및 실증 사업을 파악해 해당 산단 기업 대상 영업을 추진해야 합니다.</span></td>
+  <td class="c">시장</td>
+  <td class="src">전자신문<span class="r">2026-07-22</span></td>
+  <td class="s">64.9</td>
+</tr><tr>
+  <td class="n">16</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE14d0JoRmRDYmVhTlBKbkI5bVNYaUp6SElMWE5wTVViZGdfWWtXS1RqMG5ZVzhwT29LYTNZQUZoSEQxaktUc2VFMW12eDRIdTJnVmFiR1JHUjNTUQ?oc=5" target="_blank" rel="noopener">부산 제조업 스마트공장서 ‘제조AI’로…부산TP, 지원체계 고도화</a>
+      <span class="r">부산TP의 제조AI 지원사업에 참여하여 지역 중소기업 대상 영업 및 검사 솔루션 공급을 추진해야 합니다.</span></td>
+  <td class="c">지원사업</td>
+  <td class="src">브릿지경제<span class="r">2026-09-17</span></td>
+  <td class="s">64.5</td>
+</tr><tr>
+  <td class="n">17</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiTkFVX3lxTE9XNlp6aV9KZGcxbzRRRVZlQ1Y3WEJpMnM5UUdoejJpTmNFNXllcHBfTHBYSkh1Q29rWXhhd09iQ2VsMnIwVF9oSXRrZUxLZw?oc=5" target="_blank" rel="noopener">경남도 &#x27;제조 AI 확산 거점&#x27; 스마트공장 현장 목소리 듣는다</a>
+      <span class="r">경남도 스마트공장 현장 의견 수렴에 참여하여 AI 비전 검사 솔루션의 지원 대상 포함을 건의해야 합니다.</span></td>
+  <td class="c">지원사업</td>
+  <td class="src">전자신문<span class="r">2026-09-15</span></td>
+  <td class="s">64.5</td>
+</tr><tr>
+  <td class="n">18</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBhWUlnN1ZOVWtrdXZia3o1WTF5RjhyQmVubVYyNzZJaDRYUlRXdXpxcmZLdHlwelNnRDk4QWFDN2Zoc0EtaXF2NVdSTlRHOUp1UGRmU2YwaElOeVM3eklGQVNqX1ctRWvSAWxBVV95cUxNMXFaM2FCQmpHMzhrdktzQm1MZ2wyNjExSFRGdGNEdndWQ1pTUW8tdlBicXJobUlUaGUyTzZHSUVwekd3T19nZVRpWFBsR2xDRU13dDBQUHY4LUwzVDJTNDhmT3NlSHNVSDdaSzU?oc=5" target="_blank" rel="noopener">과기정통부·중기부, 피지컬 AI 확산 맞손…중소 제조기업 지원 논의 - 머니투데이</a>
+      <span class="r">정부의 중소 제조기업 AI 지원 정책 방향을 파악하고 정책 연계 지원사업 참여를 조기에 준비해야 합니다.</span></td>
+  <td class="c">지원사업</td>
+  <td class="src">mt.co.kr<span class="r">2026-09-07</span></td>
+  <td class="s">64.5</td>
+</tr><tr>
+  <td class="n">19</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTFBhQko3UWZvZ0pSdWtWNVk4bS1TWkRtaTJqWWNGWUxPTDJDVUdjMTB5dHprQm5yTXVqbFFMcV9wUkpxcmlmSGFyRDBZc24xNVNKWWtuN3R1c1hpak4zUHdzeHlyWnU?oc=5" target="_blank" rel="noopener">경북TP, 스마트제조혁신센터 성과평가 7년 연속 최고등급(S등급) 달성...제조AI 기반 AX 생태계 선도</a>
+      <span class="r">경북 지역 중소 제조기업 대상 AI 비전 검사 솔루션 연계 지원사업 참여 타당성을 타진해야 합니다.</span></td>
+  <td class="c">지원사업</td>
+  <td class="src">서울경제TV<span class="r">2026-08-10</span></td>
+  <td class="s">64.1</td>
+</tr><tr>
+  <td class="n">20</td>
+  <td><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE5VcmtpQnR4MEpCWkxzeUNvRVVvLTJ4cmoyQUFJQllYc21rRHg1dkZ5YVlyTlJYUUtmUlQwUnNtTDFuOE5uQmtXVVNJWFRZcmRHdlpyclh6VEwzcVlWT1h5ZVZIRk5pUzNDVGhucTFKSzdRd9IBckFVX3lxTE5VcmtpQnR4MEpCWkxzeUNvRVVvLTJ4cmoyQUFJQllYc21rRHg1dkZ5YVlyTlJYUUtmUlQwUnNtTDFuOE5uQmtXVVNJWFRZcmRHdlpyclh6VEwzcVlWT1h5ZVZIRk5pUzNDVGhucTFKSzdRdw?oc=5" target="_blank" rel="noopener">바이슨, &#x27;AW 베트남 2026&#x27;서 AI 머신비전 솔루션 선봬 - 머니투데이</a>
+      <span class="r">경쟁사의 AI 머신비전 솔루션 해외 전시 동향을 분석하고 해외 진출 및 경쟁 우위를 점검해야 합니다.</span></td>
+  <td class="c">경쟁사</td>
+  <td class="src">mt.co.kr<span class="r">2026-09-17</span></td>
+  <td class="s">64.0</td>
+</tr><tr>
+  <td class="n">21</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBaUS1BQUl2X3gtazBQVXN2aVZUUTNzbVlEd0FrcHQ2NWF1R0QzWldOOWE5OFBBdndvd1FFNlZXak1MUjRkQURndlFUTnRsUUxNZGpwNHpmNUdZZw?oc=5" target="_blank" rel="noopener">서울대 교수·삼성 연구원 뭉친 스누아이랩, AI 머신비전 플랫폼 선보여</a>
+      <span class="r">신규 AI 머신비전 플랫폼의 기술력을 분석하고 SaaS 기반의 차별화된 영업 전략을 강화해야 합니다.</span></td>
+  <td class="c">경쟁사</td>
+  <td class="src">한국경제<span class="r">2026-09-12</span></td>
+  <td class="s">64.0</td>
+</tr><tr>
+  <td class="n">22</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFB1UjZ3aTZkVFVIeExnZlA5bVVqanpBdDlVTDJZajM0b3dyNTVuQzVXNjdWOGdBN1JTRXpQTlVGQk9CcmZMd2dVYjlveXZFZmxLcWoxUWdVQmR6SkdhVm5R?oc=5" target="_blank" rel="noopener">[AW 베트남 2026] 엠비젼, 자동차 부품 외관검사 AI 비전 시스템 선보인다</a>
+      <span class="r">경쟁사의 해외 전시 참가 및 기술을 분석하여, 자사 SaaS의 차별화된 불량 탐지 기능을 홍보해야 합니다.</span></td>
+  <td class="c">경쟁사</td>
+  <td class="src">헬로티<span class="r">2026-08-26</span></td>
+  <td class="s">64.0</td>
+</tr><tr>
+  <td class="n">23</td>
+  <td><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE04bDVOd2pYaEhhcmpCbHBZdk1KODlQRHN1TmJEQUJ2MzhHOE5vSmg1VVZOaTNXN0xIQWx5ai0zRVJ4YmpyeTJzUWgzcHJSczZJTDQ1UnZrV2Q1MU5wNFp5Zk00SjhGQ2J1UHpjYw?oc=5" target="_blank" rel="noopener">클레로보틱스, 중기부 ‘글로벌 팁스’ 선정 ··· AI·3D 머신비전 기술 고도화</a>
+      <span class="r">경쟁사의 기술 고도화에 대응해 자사 비전 SaaS의 기술력을 높이고 정부 지원 사업 신청을 준비해야 합니다.</span></td>
+  <td class="c">경쟁사</td>
+  <td class="src">데이터넷<span class="r">2026-08-18</span></td>
+  <td class="s">63.9</td>
+</tr><tr>
+  <td class="n">24</td>
+  <td><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE05WE83bWV6M3ktak1jZ0xoQnp2cGgxazFmWDZydzR3Nk1zQ050X002ei1WeVNJS1NYamc0TkIzR1YzcHlSX25MVDhHTENUWjVsVy1pSDFwUlJVTllpSTNFTFhxR1dLQ2pKUkJRNm5B?oc=5" target="_blank" rel="noopener">[특집/향후 10년 한국의 수출을 이끌 차세대 산업 시리즈 No.14 스마트팩토리] “공장이 스스로 판단하고 움직인다”…AI 스마트팩토리, 한국 수출의 새 성장엔진</a>
+      <span class="r">AI 스마트팩토리 국책 사업 및 산업 동향에 맞춰 중소·중견기업 맞춤형 검사 SaaS 홍보를 강화해야 합니다.</span></td>
+  <td class="c">정책</td>
+  <td class="src">코리아포스트 한글판<span class="r">2026-09-19</span></td>
+  <td class="s">63.5</td>
+</tr><tr>
+  <td class="n">25</td>
+  <td><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE5fVUJvU0JUbjRnSGlhZkxLN1UzM3g1cl95UWV6UHNyb3RCOHNuSGtsRm5RUjBQTjlld3RVclMybDZPUE1TYXBILWp0OTBHOTRIRlJiTHZDT1hyU3RybG50OHR6Z0FMaFFxdEw0btIBckFVX3lxTE4zQllyVlYwSXJ6b2kteG1uN0RPU0YzQXRlMGxVVlVOT1JfdnhhTjVIMlg5cmh1Wjc3N0VrQWFJLWVwX0prcHZzZzl6cTE2bTJNZGx0bXZYeFk5eHNvSnFLRkVKbHhaa1FpbjdsTnZoQVo0UQ?oc=5" target="_blank" rel="noopener">바이슨, 이차전지 분야 복수 기업과 AI 비전검사 PoC 진행 - 머니투데이</a>
+      <span class="r">이차전지 분야의 비전 검사 적용 사례를 벤치마킹하고, 관련 제조업체 대상 PoC 영업을 강화해야 합니다.</span></td>
+  <td class="c">경쟁사</td>
+  <td class="src">mt.co.kr<span class="r">2026-08-03</span></td>
+  <td class="s">63.3</td>
+</tr><tr>
+  <td class="n">26</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTFA0OGF0WG5kNzlhcnBOUFplSkNVekdybWJLRzhMdHp1ZlVnbXdzM0cyWjV5NGJZSGpBUDl3YUdyYkliTXZjRXVPUzZRRGltanIyWGxTQm8xOGNGX01TXzVwU25QM1TSAWhBVV95cUxPZVAtUkFHZm5KdkRUN2xrM2RNYUl3QWQ3Mkdna2VmY3NINEt0bmJHS0FkZjZmWWxtYnBra0c4a1o3MGVnU0VaMVRwLTJUcmlHa2V0SGlqZ1ozSjYtckNZWmxkMXZ0b0hzVg?oc=5" target="_blank" rel="noopener">AI·스마트공장 산업 첫 공식 분류…스마트제조기업 체계 육성</a>
+      <span class="r">스마트제조 공식 분류체계 편입에 대비하여 정부의 스마트공장 보급 지원 사업 참여 및 인증 획득을 준비해야 합니다.</span></td>
+  <td class="c">정책</td>
+  <td class="src">매일일보<span class="r">2026-07-23</span></td>
+  <td class="s">62.9</td>
+</tr><tr>
+  <td class="n">27</td>
+  <td><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNTWxNc2tRQ0ZLWGdnRThnRXo1U2RHUmZpdEdEVTNOZXZZQmdwaHVBeVdHZThLRkFvM201MDE1R0o0dnNWUGdWdHJSQkdOQVhUVndLMDdMQXQ4bml4WHRjOVBjQk9EeE13eDJIRjBHTHZyV2hhQ2o0R0wzYzBXaXBGdktabDNIcjZBS0I0ZE4wY1rSAaQBQVVfeXFMTmNHeFJVMjVkVVRLOU5hZnBHSkxwU3dmT3hEYU1ubm1KWlhSdUNVZkhPeFF6NXUzX0FuUTgxSTM0OFR6eWVMOGpxWkRRRl9FcEhYWHJ3aFNFeGU0M1pNaFZqM0llUUJCVkM5TXJRUG1hQTJlRHQxOU5BMlFTSlVKa19MZFB3UXlpUnV1M3UxLTdES21kWUFfeXFLUGx6WU9HOWhhZk0?oc=5" target="_blank" rel="noopener">중기부, ‘스마트제조기술산업 특수분류’ 제정…AI 제조혁신 정책기반 마련 - 조선비즈</a>
+      <span class="r">정부의 스마트제조 육성 정책 수혜를 받기 위해 자사 솔루션을 공식 분류 기준에 맞춰 정비하고 지원을 신청해야 합니다.</span></td>
+  <td class="c">정책</td>
+  <td class="src">Chosunbiz<span class="r">2026-07-23</span></td>
+  <td class="s">62.9</td>
+</tr><tr>
+  <td class="n">28</td>
+  <td><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE1ZYVQwZmJDZndhbm5nVFdReFI4LUxjS081Mk41amxvYXFKUi04NXJRc1RoZEZMNnlfMUhCSl95bnd1VnpXVnNKc3V3WWY3SENVWGVxdTZBeF83Q3NnMkZrUnhreGoyVHdQZ0dyTm9iT3fSAXRBVV95cUxPYXNMaS1vbzcybUJJdm55U0EwdXNLanlJZWd3aGZ0aXNjcU1ZZHZWRzhzZHpSUGViZGNxZ25HT25SZmJWMWNYRUFOYXh3ZUlzODFSel9JYkN0clhCVVN0M3V4eFJsOGR6aUFfeGpLXzRpb056cg?oc=5" target="_blank" rel="noopener">제조 AI 도입률 0.1% 시대, 스마트팩토리 데이터 품질 해법은?</a>
+      <span class="r">시장의 제조 AI 도입 데이터 장애 요인을 분석해 품질 리포트 자동화 세일즈에 활용해야 합니다.</span></td>
+  <td class="c">시장</td>
+  <td class="src">한국데이터경제신문<span class="r">2026-06-26</span></td>
+  <td class="s">62.8</td>
+</tr><tr>
+  <td class="n">29</td>
+  <td><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE5XOTdObTRCT3ZPUTZmR2plS1h3bTZsdTJoVGJLdGpKVndUTUk2UG5ZeU9reHcwS0Q0VVVhTjMwRG9XMnNYODRSaVZyWnhGc3hmcFdudm84UW9LUDZCZ0IwUDdwdEMzSnZVenlaandSa2gwZw?oc=5" target="_blank" rel="noopener">55년 전통 천안 호두과자에 AI 입힌다…대신제과, 스마트공장 전환</a>
+      <span class="r">식품 제조 분야의 스마트공장 전환 사례를 참고해 중소 식품 제조업체 대상 비전 검사 영업을 확대해야 합니다.</span></td>
+  <td class="c">시장</td>
+  <td class="src">goodmorningcc.com<span class="r">2026-09-08</span></td>
+  <td class="s">61.5</td>
+</tr><tr>
+  <td class="n">30</td>
+  <td><a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTFByeXR1ODRLMUllVHBLNE05SjgtU3k4aGpYYjNyUHc1NkQzRTctUlY1MDdIT254ZkI5M015dzlHYXJBazBwVVRVS2pQd1NtaUc5VkZ1Zk9nQjRhYV90bFBLTFJMcWFtWlVr?oc=5" target="_blank" rel="noopener">마키나락스, 에너토크와 AI 네이티브 팩토리 구축…국내 첫 제조 AX 전 주기 실증</a>
+      <span class="r">제조 AX 시장 내 타사 실증 사례를 분석하고 AI 비전 검사 분야에 특화된 차별화 포인트를 강화해야 합니다.</span></td>
+  <td class="c">경쟁사</td>
+  <td class="src">paxetv.com<span class="r">2026-07-24</span></td>
+  <td class="s">57.9</td>
+</tr></tbody>
+    </table></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>원문 1,586건은 공개 RSS, 웹 페이지, API에서 수집했습니다. 합성 fallback 데이터 0건이 포함되어 있습니다.</p>
+  <p>전체 데이터: <a href="report.json">report.json</a></p>
+</footer>
+</body>
+</html>

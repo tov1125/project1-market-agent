@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-09-19T15:47:56+09:00",
+  "input_rows": 1586,
+  "top_n": 30,
+  "weights": {
+    "keyword": 30,
+    "company": 30,
+    "competitor": 15,
+    "funding": 15,
+    "recency": 10
+  },
+  "rule_weight": 0.6,
+  "llm_weight": 0.4,
+  "skipped_same_story": 0,
+  "llm": {
+    "used": true,
+    "reason": "",
+    "requested": 60,
+    "evaluated": 60,
+    "failed_batches": 0,
+    "models_used": [
+      "gemini-3.5-flash",
+      "gemini-3.6-flash"
+    ]
+  },
+  "model_candidates": [
+    "gemini-flash-latest",
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-flash-lite-latest"
+  ]
+}

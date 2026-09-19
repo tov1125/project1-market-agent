@@ -1,0 +1,98 @@
+{
+  "started_at": "2026-09-19T15:44:27+09:00",
+  "finished_at": "2026-09-19T15:45:44+09:00",
+  "target": 200,
+  "total": 1586,
+  "live": 1586,
+  "fallback": 0,
+  "output": "data/raw/crawled_market_news.csv",
+  "by_category": {
+    "competitor": 154,
+    "funding": 390,
+    "market": 556,
+    "policy": 119,
+    "technology": 367
+  },
+  "sources": [
+    {
+      "name": "google_news_rss",
+      "kind": "primary",
+      "method": "rss",
+      "ok": true,
+      "fetched": 1637,
+      "kept": 1389,
+      "error": "",
+      "error_type": "",
+      "partial_errors": {}
+    },
+    {
+      "name": "bizinfo",
+      "kind": "primary",
+      "method": "requests",
+      "ok": true,
+      "fetched": 51,
+      "kept": 51,
+      "error": "",
+      "error_type": "",
+      "partial_errors": {}
+    },
+    {
+      "name": "mss_press",
+      "kind": "primary",
+      "method": "requests",
+      "ok": true,
+      "fetched": 15,
+      "kept": 15,
+      "error": "",
+      "error_type": "",
+      "partial_errors": {}
+    },
+    {
+      "name": "aitimes_rss",
+      "kind": "primary",
+      "method": "rss",
+      "ok": true,
+      "fetched": 17,
+      "kept": 17,
+      "error": "",
+      "error_type": "",
+      "partial_errors": {}
+    },
+    {
+      "name": "zdnet_rss",
+      "kind": "primary",
+      "method": "rss",
+      "ok": true,
+      "fetched": 13,
+      "kept": 13,
+      "error": "",
+      "error_type": "",
+      "partial_errors": {}
+    },
+    {
+      "name": "etnews_rss",
+      "kind": "primary",
+      "method": "rss",
+      "ok": true,
+      "fetched": 1,
+      "kept": 1,
+      "error": "",
+      "error_type": "",
+      "partial_errors": {}
+    },
+    {
+      "name": "arxiv_api",
+      "kind": "primary",
+      "method": "api",
+      "ok": true,
+      "fetched": 100,
+      "kept": 100,
+      "error": "",
+      "error_type": "",
+      "partial_errors": {}
+    }
+  ],
+  "failed_sources": [],
+  "error_types": {},
+  "below_target_before_fallback": false
+}

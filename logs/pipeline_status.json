@@ -1,0 +1,73 @@
+{
+  "finished_at": "2026-09-19T15:47:56+09:00",
+  "overall": "SUCCESS",
+  "seconds": 208.3,
+  "stages": [
+    {
+      "stage": "collect",
+      "status": "SUCCESS",
+      "seconds": 76.2,
+      "exit_code": 0,
+      "output": "data/raw/crawled_market_news.csv",
+      "rows": 1586,
+      "notes": [
+        "live 1586건 / fallback 0건"
+      ],
+      "error": ""
+    },
+    {
+      "stage": "clean",
+      "status": "SUCCESS",
+      "seconds": 0.1,
+      "exit_code": 0,
+      "output": "data/processed/cleaned_market_news.csv",
+      "rows": 1586,
+      "notes": [
+        "1586 → 1586건 (중복 -0, 결측 -0, 날짜 무효 0)"
+      ],
+      "error": ""
+    },
+    {
+      "stage": "recommend",
+      "status": "SUCCESS",
+      "seconds": 131.9,
+      "exit_code": 0,
+      "output": "data/processed/recommended_market_news.csv",
+      "rows": 30,
+      "notes": [
+        "LLM 사용: 60건 평가, 모델 gemini-3.5-flash, gemini-3.6-flash"
+      ],
+      "error": ""
+    },
+    {
+      "stage": "dashboard",
+      "status": "SUCCESS",
+      "seconds": 0.0,
+      "exit_code": 0,
+      "output": "docs/index.html",
+      "rows": 30,
+      "notes": [
+        "index.html 39KB, 추천 30건"
+      ],
+      "error": ""
+    }
+  ],
+  "outputs": {
+    "raw": {
+      "path": "data/raw/crawled_market_news.csv",
+      "exists": true
+    },
+    "cleaned": {
+      "path": "data/processed/cleaned_market_news.csv",
+      "exists": true
+    },
+    "recommended": {
+      "path": "data/processed/recommended_market_news.csv",
+      "exists": true
+    },
+    "dashboard": {
+      "path": "docs/index.html",
+      "exists": true
+    }
+  }
+}

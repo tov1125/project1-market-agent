@@ -1,0 +1,31 @@
+# 시장/경쟁사 수집 기준 (Project 1 Market Agent)
+company_name: NovaFactory AI
+business_area: 제조업 AI 비전 품질검사
+products:
+  - 비전 기반 불량 탐지 SaaS
+  - 제조 품질 리포트 자동화
+target_market:
+  - 중소·중견 제조기업
+  - 스마트팩토리 구축 기업
+competitors:        # 최소 3개 (fallback CSV company_tag 와 일치)
+  - VisionForge
+  - InspectAI
+  - FactoryMind
+  - QualiBot
+interest_keywords:  # 최소 5개
+  - AI
+  - 스마트팩토리
+  - 품질검사
+  - 자동화
+  - 클라우드
+  - 제조 AX
+  - 디지털 전환     # 보완: fallback CSV 빈출 키워드
+  - 생성형 AI       # 보완
+  - 데이터          # 보완
+funding_keywords:
+  - 창업지원
+  - AI 바우처
+  - 스마트공장
+  - R&D
+  - 사업화 자금
+report_language: ko

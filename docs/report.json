@@ -1,0 +1,753 @@
+{
+  "generated_at": "2026-09-19T15:47:56+09:00",
+  "company": {
+    "company_name": "NovaFactory AI",
+    "business_area": "제조업 AI 비전 품질검사",
+    "products": [
+      "비전 기반 불량 탐지 SaaS",
+      "제조 품질 리포트 자동화"
+    ],
+    "target_market": [
+      "중소·중견 제조기업",
+      "스마트팩토리 구축 기업"
+    ],
+    "competitors": [
+      "VisionForge",
+      "InspectAI",
+      "FactoryMind",
+      "QualiBot"
+    ]
+  },
+  "totals": {
+    "collected": 1586,
+    "recommended": 30,
+    "live": 1586,
+    "fallback": 0
+  },
+  "llm": {
+    "used": true,
+    "evaluated": 60,
+    "models": [
+      "gemini-3.5-flash",
+      "gemini-3.6-flash"
+    ],
+    "note": ""
+  },
+  "scoring": {
+    "weights": {
+      "keyword": 30,
+      "company": 30,
+      "competitor": 15,
+      "funding": 15,
+      "recency": 10
+    },
+    "rule_weight": 0.6,
+    "llm_weight": 0.4
+  },
+  "category_stats": [
+    {
+      "category": "market",
+      "label": "시장",
+      "collected": 556,
+      "recommended": 10
+    },
+    {
+      "category": "competitor",
+      "label": "경쟁사",
+      "collected": 154,
+      "recommended": 7
+    },
+    {
+      "category": "policy",
+      "label": "정책",
+      "collected": 119,
+      "recommended": 5
+    },
+    {
+      "category": "funding",
+      "label": "지원사업",
+      "collected": 390,
+      "recommended": 7
+    },
+    {
+      "category": "technology",
+      "label": "기술동향",
+      "collected": 367,
+      "recommended": 1
+    }
+  ],
+  "top10": [
+    "LV-0912",
+    "LV-0914",
+    "LV-1180",
+    "LV-0242",
+    "LV-0675",
+    "LV-0878",
+    "LV-1193",
+    "LV-1196",
+    "LV-1378",
+    "LV-1078"
+  ],
+  "items": [
+    {
+      "rank": 1,
+      "article_id": "LV-0912",
+      "category": "funding",
+      "category_label": "지원사업",
+      "title": "공정 자동화 넘어 '제조AI'로… 부산, 스마트공장 2.0 대전환 속도",
+      "date": "2026-09-18",
+      "source_name": "폴리뉴스 Polinews",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9oNWIzNERLa0JJRUVDUV94alhDQ0lfNkl4dnlJR0NPaHl3MzVEckFjWlZZYkNJdVR1UHQxc3AtQlRtRGZMWm9YamtoVXFlNHVzTGRDZktNRm84Tm5uMGppMkVXbXZNOUpESTFVeGRnMC1LZ9IBckFVX3lxTE9oNWIzNERLa0JJRUVDUV94alhDQ0lfNkl4dnlJR0NPaHl3MzVEckFjWlZZYkNJdVR1UHQxc3AtQlRtRGZMWm9YamtoVXFlNHVzTGRDZktNRm84Tm5uMGppMkVXbXZNOUpESTFVeGRnMC1LZw?oc=5",
+      "company_tag": "",
+      "final_score": 76.5,
+      "rule_score": 67.5,
+      "llm_score": 90.0,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 5.0,
+        "urgency": 5.0
+      },
+      "reason": "부산 지역 스마트공장 지원사업 정보를 확인하고 지역 중소 제조기업 대상 비전 검사 구축 영업을 추진해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 2,
+      "article_id": "LV-0914",
+      "category": "funding",
+      "category_label": "지원사업",
+      "title": "부산 제조업, 데이터와 AI로 새 길을 연다",
+      "date": "2026-09-17",
+      "source_name": "데일리한국",
+      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1qN29LQXk0OFR4dVU1WmZwUUpmT2lETEEySnpObWUyWGtqR1cyclhLcmlDMjIzLUZuOFpBaHM2VWZKR1J5cUVIdHlNVENreGNqVWZjY0V0YzZKZWEyVUxEbVRUN3dkTEwyYUZvWUpBSQ?oc=5",
+      "company_tag": "",
+      "final_score": 76.5,
+      "rule_score": 67.5,
+      "llm_score": 90.0,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 5.0,
+        "urgency": 5.0
+      },
+      "reason": "부산시의 제조 AI 지원 정책을 활용해 현지 중소·중견 기업 대상 스마트팩토리 사업 제안을 서둘러야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 3,
+      "article_id": "LV-1180",
+      "category": "market",
+      "category_label": "시장",
+      "title": "피지컬 AI·제조 AX의 확산… 세이지, 건설기계 업종 AI 솔루션 실증 사업 착수",
+      "date": "2026-07-29",
+      "source_name": "한국데이터경제신문",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBDcnB6SEZRcXRSNEI1dFQxdnoyR19FckVqNHpLM2U1aXd2WWVxaDRFWnpWWENaNFR6SzZNcnpQZUxRUUhNLTRmVXREcHZtaGhIRG5YdzFPb2Y0WEFELWJQLThTNHJyQlUxZUljSzlKNW3SAXRBVV95cUxOYVdPVVZ1cEg2eXBNak9pcWZlNDh3Xy1RNTYwcWd6aEd6bnhjSXlBeUlLYmx1dng1QW5ta1NkUjZndjBHbVY0WTNXbmRET19JWEl5NENWdDFCamFWTTZHcUtNYW5hSUpwQUFBamhGaVBqeTlRVQ?oc=5",
+      "company_tag": "세이지",
+      "final_score": 74.6,
+      "rule_score": 78.5,
+      "llm_score": 68.8,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 4.0,
+        "urgency": 3.0
+      },
+      "reason": "세이지의 건설기계 AI 실증 사례를 분석하여 특정 제조 업종 맞춤형 비전 검사 솔루션 영업을 강화해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 4,
+      "article_id": "LV-0242",
+      "category": "market",
+      "category_label": "시장",
+      "title": "마키나락스, 산업 AI 파트너십 본격화…다겸과 AI 품질검사·예지보전 솔루션 공동 개발",
+      "date": "2026-07-01",
+      "source_name": "paxetv.com",
+      "source_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9aMEtKc05SR2dlNldLa1NGTU14WVBEX1E3blVNOFZja2JwNVIwU1pSYWJHRmF0WjNhNHBJTTRnc0VvRGNzNXh0TWM5WE01cU5nQ2MzWXd0Y0EyT1JFUmQ5VUJPaHBqWFI5?oc=5",
+      "company_tag": "마키나락스",
+      "final_score": 72.2,
+      "rule_score": 67.9,
+      "llm_score": 78.8,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 3.0
+      },
+      "reason": "경쟁 솔루션 개발 동향을 모니터링하고 차별화된 비전 기반 불량 탐지 SaaS 기능 개발을 추진해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 5,
+      "article_id": "LV-0675",
+      "category": "technology",
+      "category_label": "기술동향",
+      "title": "AI가 불량 잡고 보고서까지 쓴다…지미션, 제조 AX 플랫폼 개발",
+      "date": "2026-07-27",
+      "source_name": "daenews.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9mNW1TdVRlWU1tQ3RGQ0FSYmJTTEMtT0l1cUE4SUtLTnc3akRYWDFJeHNZWG1MbGtHTTNWQ2tjSkFfVnk1SXfSAWJBVV95cUxNZEoxUnNxWkk0dzFHN3ZWa3RHUUlmeGQ3Q3RHZzZQY3Jycll0b3FWN1Qwc3h5c3JYWWp4QldmaDZ6ZVNVcnVjVDNkRktJVHJzbktmcUgtbHgxV2ZaLTZEejJJZw?oc=5",
+      "company_tag": "",
+      "final_score": 71.3,
+      "rule_score": 52.1,
+      "llm_score": 100.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 5.0,
+        "urgency": 5.0
+      },
+      "reason": "당사 핵심 기능인 불량 탐지와 보고서 자동화와 동일한 경쟁 제품이 출시되어 차별화 전략을 즉시 점검해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 6,
+      "article_id": "LV-0878",
+      "category": "funding",
+      "category_label": "지원사업",
+      "title": "부산테크노파크, 스마트공장 넘어 ‘제조AI·자율형공장’ 전환 지원 강화",
+      "date": "2026-09-18",
+      "source_name": "이뉴스투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5fMG9GaDZRREZ3RmFXZGUtT1IxVzRhQjBWQVgtQmxWVEVmWG93Unp5UGU3NmFKUEFibm1iV09yNUVnZ2JjVVFSZFZGRm8xVy1sWmZTckUtQkJuS19uNVdPeWViNkZ2RVo1S3pYRXd5bUZHRzNr0gF0QVVfeXFMTl8wb0ZoNlFERndGYVdkZS1PUjFXNGFCMFZBWC1CbFZURWZYb3dSenlQZTc2YUpQQWJubWJXT3I1RWdnYmNVUVJkVkZGbzFXLWxaZlNyRS1CQm5LX241V095ZWI2RnZFWjVLelhFd3ltRkdHM2s?oc=5",
+      "company_tag": "",
+      "final_score": 70.5,
+      "rule_score": 57.5,
+      "llm_score": 90.0,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 5.0,
+        "urgency": 5.0
+      },
+      "reason": "부산테크노파크의 지원사업 대상 기업들을 파악하고 스마트공장 구축 연계 제휴 및 영업을 신속히 추진해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 7,
+      "article_id": "LV-1193",
+      "category": "market",
+      "category_label": "시장",
+      "title": "버넥트, VLM 기반 ‘Inspect Assembly’로 제조 조립검사 AI 전환 가속화",
+      "date": "2026-09-17",
+      "source_name": "테크데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0zNkNjNDB2WXU2RVlIMEtlNURvLUEzVTdJb2F6WFZLakVZb0trU2k0bUFpVGU2REpIc3FLQXpSRlhEWVdGZWhwTTNQTkljQ0tRM3Q3QjNna0xBcG8wVENJanBxSEY5TFZYOWYtaVBn0gFyQVVfeXFMTS0xMkdzTzRrZnBhS1BSbFVpZWl0Y28tUlRWSHR2YW9IRDhEMHVXbUZmOWd4clR0dWx0dG5aMHc0ckRnT2pSYzVBVkd3VGpoel9zODNkX0RZQkNBRE5hLWVZQkRabUQ2RlpwOVhaSExmTUZB?oc=5",
+      "company_tag": "",
+      "final_score": 70.5,
+      "rule_score": 55.0,
+      "llm_score": 93.8,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 5.0,
+        "urgency": 4.0
+      },
+      "reason": "버넥트의 VLM 기반 조립검사 솔루션을 모니터링하고 자사 비전 검사 경쟁력을 점검해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 8,
+      "article_id": "LV-1196",
+      "category": "market",
+      "category_label": "시장",
+      "title": "눈으로 보고 스스로 판단하는 AI…피아이이, 제조 지능화 시장 공략",
+      "date": "2026-09-05",
+      "source_name": "pinpointnews.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84MG10VjlxR2JJTUc4Q0NPNmtReHBXdmYtUm10NFliQWZUUWtRSkFWVFVvS1Z0dmFjUnVIc213MVZzMnNVOXp0RTB2OEJWVzVNQmhMeVdJTUNQVmdCbk4wVHFmdDNQMzBBcFlqTHFER2paV1XSAXdBVV95cUxQLXd4cUdpYWMtckVvaExzaVJFR196eEVWZVB1eDZWa19IZWt0WVZpcllrQzJNdU92RkhFQlNpaW9taHhsazJkaEhDR0l3UUpCeEJTdWd2VktWUTFmdlpkRXJHdGlqNVNwVHdDNEhPblVIdHQ0dWpUTQ?oc=5",
+      "company_tag": "",
+      "final_score": 70.5,
+      "rule_score": 55.0,
+      "llm_score": 93.8,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 5.0,
+        "urgency": 4.0
+      },
+      "reason": "피아이이의 제조 지능화 공략 전략을 분석하여 중소·중견기업 타깃 마케팅을 강화해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 9,
+      "article_id": "LV-1378",
+      "category": "competitor",
+      "category_label": "경쟁사",
+      "title": "[AISE 2026]“인건비 부담·품질 편차 한 번에 잡는다”...에이아이매틱스, 소량 데이터 기반 비전 AI ‘AIM-T1’ 제시",
+      "date": "2026-08-24",
+      "source_name": "디지틀조선일보",
+      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPRkRsd2JRb1ZqUzNxY3BSMGtIV28xNUtRWGtWZW1pWjFRaGxaMzBxOVZRWlgybERSTzFMZFFxbXFtdjFTVkJzMlpKTFdtTTJtUVAtNW1yZEQ1OG9tS0xLdXFZbzJmLXpGaEEzdFh6UXpKVjZ4WXRBeW9yVDFaLU1nX0ZfVHZkZFHSAXtBVV95cUxObDdpcFlTTFFVbXMxV01xbzFHRkd2RWwtV2wzM0dQaDBBSzduSkVGbWZ3UnV3b0c4dlFFSjNQRjZtUng5c1dmZXpKcGxwcFlfNjRxM3ZVSmdsb1RPU2ZQRUVXRWZJX05lZWFHYWtkM1d0OWJ0WXp0czJsVDg?oc=5",
+      "company_tag": "",
+      "final_score": 70.0,
+      "rule_score": 60.0,
+      "llm_score": 85.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "소량 데이터 기반 비전 AI 기술 출시 동향을 파악하고 자사 불량 탐지 SaaS의 소량 데이터 학습 성능을 고도화해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 10,
+      "article_id": "LV-1078",
+      "category": "policy",
+      "category_label": "정책",
+      "title": "AI가 이끄는 제조업의 대전환, 청사진 나왔다....정부, 2030년까지 민·관 합동 20조원 투자",
+      "date": "2026-06-29",
+      "source_name": "인공지능신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1TY0NVei1KcmtKNXdZaVdYeF9BNzlUQi1mRElSNk1rNVFfa3ctUG9nMVNzSnpYWEtVcTh1SnpJSEUyVkl2bWNFT1hiNGZ3b3FVVWdnbUNqclhKVG9OMnhzdHNBNmNiUG8?oc=5",
+      "company_tag": "",
+      "final_score": 67.9,
+      "rule_score": 46.5,
+      "llm_score": 100.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 5.0,
+        "urgency": 5.0
+      },
+      "reason": "정부의 대규모 제조 AI 투자 계획에 발맞춰, 중소기업 대상 스마트공장 구축 지원 사업 연계 영업을 강화해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 11,
+      "article_id": "LV-1097",
+      "category": "policy",
+      "category_label": "정책",
+      "title": "정부, 제조 AI 전환 ‘M.AX 청사진’도 공개",
+      "date": "2026-06-29",
+      "source_name": "경향신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JWS1sS1ozVnJhbWtkejVBdEdtZHIxMXI0c0p3bS1CNTlCd3FwY1lyX3BSem00WThLWnpTeXZIQXBic0g5Wkw1V2FwNmpidWRjV2VXbDNYUmtlUdIBX0FVX3lxTE1fRXBxZDF0Nmowa0EyNjVhSDFub3VhQjZkR1ZneUxJV2RLcVVjSkVvbERxaWRWRTRJbXQ2cVJJVWJScHA2UzY0SmlfQk55OW00bFUxeWEtZnA1a0NJUVBF?oc=5",
+      "company_tag": "",
+      "final_score": 67.9,
+      "rule_score": 46.5,
+      "llm_score": 100.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 5.0,
+        "urgency": 5.0
+      },
+      "reason": "정부의 제조 AI 전환 정책에 부합하는 비전 검사 및 품질 리포트 자동화 솔루션의 정부 과제 참여를 추진해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 12,
+      "article_id": "LV-0211",
+      "category": "market",
+      "category_label": "시장",
+      "title": "서큘러스, 'DTF 2026'서 엣지 AI 안전·품질검사 솔루션 공개 - 머니투데이",
+      "date": "2026-08-25",
+      "source_name": "mt.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1NYVdPMTRRVHpWWjVHMHBzdTB0bHdtc2M2SFlvNDNQWmVhVXVkYTJNelZIZzd5ZjhrQkQxbm5hRDZ4U3NVSXd1cjl0Z2dMaTNLNmNRRVYyMGZYV192YzFvVnl1bFJRUk1mNkgyd9IBckFVX3lxTE5rVk5WMjlTUi1pa2xKYTFKc08xc1gwZGpkTENZZ2ZLMTdQSnljd3NiVV9HYjBVek9HQ1lMX0V5MnVucktndm1qeXJYYzlDRnlpRGZVRnhCMlliUXRYa1FiNmF5S193VnBaTlMzNlZJVjVDQQ?oc=5",
+      "company_tag": "",
+      "final_score": 67.7,
+      "rule_score": 56.2,
+      "llm_score": 85.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "서큘러스의 엣지 AI 품질검사 솔루션을 분석하고 자사 SaaS 제품 차별화 포인트를 확보해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 13,
+      "article_id": "LV-0236",
+      "category": "market",
+      "category_label": "시장",
+      "title": "[2026 하반기 혁신 IT 대상] 엑타스, AI 비전 기반 정제 품질검사 기술",
+      "date": "2026-09-01",
+      "source_name": "중앙일보",
+      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1hR1FyeFl0cjRzTkhuOUg5eXF5azYyZGFtdTZzc0pGeGRkSTlocFFrRVRhdHlIa3NyNFZBck1VZ3pweVBqWU9GZDl2ME11ZXBKNVVrdHhB?oc=5",
+      "company_tag": "",
+      "final_score": 67.5,
+      "rule_score": 60.0,
+      "llm_score": 78.8,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 3.0
+      },
+      "reason": "제약 정제 등 특화 업종의 비전 검사 기술 동향을 분석해 자사 솔루션의 업종별 특화 기능을 강화해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 14,
+      "article_id": "LV-0275",
+      "category": "market",
+      "category_label": "시장",
+      "title": "제조업 AI 도입률 4%···\"현장 데이터 99%는 쓰고 버려져\"",
+      "date": "2026-07-23",
+      "source_name": "시사저널e",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBMNHpCRVhybE1mYS0yVjJ1WEIxY1ZSSXlfQkt0Z2dSQWc1MWJqaWlfUEJNZHJPUkRaRVZJeU5UbDBRN3pUNWxNR0RMZUpycDMzeTdRdmRfaFRYYXNFcjM2NWhhV0xZV0RGS0ZRV2NwNXlCdw?oc=5",
+      "company_tag": "",
+      "final_score": 65.4,
+      "rule_score": 63.1,
+      "llm_score": 68.8,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 4.0,
+        "urgency": 3.0
+      },
+      "reason": "버려지는 현장 데이터를 활용하는 품질 리포트 자동화 솔루션의 마케팅 메시지를 강화할 필요가 있습니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 15,
+      "article_id": "LV-1186",
+      "category": "market",
+      "category_label": "시장",
+      "title": "포항, '철강 공정 제조데이터'로 AX 속도…학습데이터셋 구축·현장 실증 본격화",
+      "date": "2026-07-22",
+      "source_name": "전자신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1XWDRiWXd1ejgwcGxaN2VLbnNIM1d1cnJKLUJmUTdadXBDSlBxRFVtaTFEMnJHQTBCNHVHZmZVYTlyS3NZbDRlVDNRZHdaZw?oc=5",
+      "company_tag": "",
+      "final_score": 64.9,
+      "rule_score": 58.1,
+      "llm_score": 75.0,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "포항 철강 데이터셋 구축 및 실증 사업을 파악해 해당 산단 기업 대상 영업을 추진해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 16,
+      "article_id": "LV-0840",
+      "category": "funding",
+      "category_label": "지원사업",
+      "title": "부산 제조업 스마트공장서 ‘제조AI’로…부산TP, 지원체계 고도화",
+      "date": "2026-09-17",
+      "source_name": "브릿지경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE14d0JoRmRDYmVhTlBKbkI5bVNYaUp6SElMWE5wTVViZGdfWWtXS1RqMG5ZVzhwT29LYTNZQUZoSEQxaktUc2VFMW12eDRIdTJnVmFiR1JHUjNTUQ?oc=5",
+      "company_tag": "",
+      "final_score": 64.5,
+      "rule_score": 57.5,
+      "llm_score": 75.0,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "부산TP의 제조AI 지원사업에 참여하여 지역 중소기업 대상 영업 및 검사 솔루션 공급을 추진해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 17,
+      "article_id": "LV-0867",
+      "category": "funding",
+      "category_label": "지원사업",
+      "title": "경남도 '제조 AI 확산 거점' 스마트공장 현장 목소리 듣는다",
+      "date": "2026-09-15",
+      "source_name": "전자신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9XNlp6aV9KZGcxbzRRRVZlQ1Y3WEJpMnM5UUdoejJpTmNFNXllcHBfTHBYSkh1Q29rWXhhd09iQ2VsMnIwVF9oSXRrZUxLZw?oc=5",
+      "company_tag": "",
+      "final_score": 64.5,
+      "rule_score": 57.5,
+      "llm_score": 75.0,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "경남도 스마트공장 현장 의견 수렴에 참여하여 AI 비전 검사 솔루션의 지원 대상 포함을 건의해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 18,
+      "article_id": "LV-0921",
+      "category": "funding",
+      "category_label": "지원사업",
+      "title": "과기정통부·중기부, 피지컬 AI 확산 맞손…중소 제조기업 지원 논의 - 머니투데이",
+      "date": "2026-09-07",
+      "source_name": "mt.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBhWUlnN1ZOVWtrdXZia3o1WTF5RjhyQmVubVYyNzZJaDRYUlRXdXpxcmZLdHlwelNnRDk4QWFDN2Zoc0EtaXF2NVdSTlRHOUp1UGRmU2YwaElOeVM3eklGQVNqX1ctRWvSAWxBVV95cUxNMXFaM2FCQmpHMzhrdktzQm1MZ2wyNjExSFRGdGNEdndWQ1pTUW8tdlBicXJobUlUaGUyTzZHSUVwekd3T19nZVRpWFBsR2xDRU13dDBQUHY4LUwzVDJTNDhmT3NlSHNVSDdaSzU?oc=5",
+      "company_tag": "",
+      "final_score": 64.5,
+      "rule_score": 57.5,
+      "llm_score": 75.0,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "정부의 중소 제조기업 AI 지원 정책 방향을 파악하고 정책 연계 지원사업 참여를 조기에 준비해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 19,
+      "article_id": "LV-0889",
+      "category": "funding",
+      "category_label": "지원사업",
+      "title": "경북TP, 스마트제조혁신센터 성과평가 7년 연속 최고등급(S등급) 달성...제조AI 기반 AX 생태계 선도",
+      "date": "2026-08-10",
+      "source_name": "서울경제TV",
+      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBhQko3UWZvZ0pSdWtWNVk4bS1TWkRtaTJqWWNGWUxPTDJDVUdjMTB5dHprQm5yTXVqbFFMcV9wUkpxcmlmSGFyRDBZc24xNVNKWWtuN3R1c1hpak4zUHdzeHlyWnU?oc=5",
+      "company_tag": "",
+      "final_score": 64.1,
+      "rule_score": 56.8,
+      "llm_score": 75.0,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "경북 지역 중소 제조기업 대상 AI 비전 검사 솔루션 연계 지원사업 참여 타당성을 타진해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 20,
+      "article_id": "LV-1365",
+      "category": "competitor",
+      "category_label": "경쟁사",
+      "title": "바이슨, 'AW 베트남 2026'서 AI 머신비전 솔루션 선봬 - 머니투데이",
+      "date": "2026-09-17",
+      "source_name": "mt.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5VcmtpQnR4MEpCWkxzeUNvRVVvLTJ4cmoyQUFJQllYc21rRHg1dkZ5YVlyTlJYUUtmUlQwUnNtTDFuOE5uQmtXVVNJWFRZcmRHdlpyclh6VEwzcVlWT1h5ZVZIRk5pUzNDVGhucTFKSzdRd9IBckFVX3lxTE5VcmtpQnR4MEpCWkxzeUNvRVVvLTJ4cmoyQUFJQllYc21rRHg1dkZ5YVlyTlJYUUtmUlQwUnNtTDFuOE5uQmtXVVNJWFRZcmRHdlpyclh6VEwzcVlWT1h5ZVZIRk5pUzNDVGhucTFKSzdRdw?oc=5",
+      "company_tag": "",
+      "final_score": 64.0,
+      "rule_score": 50.0,
+      "llm_score": 85.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "경쟁사의 AI 머신비전 솔루션 해외 전시 동향을 분석하고 해외 진출 및 경쟁 우위를 점검해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 21,
+      "article_id": "LV-1364",
+      "category": "competitor",
+      "category_label": "경쟁사",
+      "title": "서울대 교수·삼성 연구원 뭉친 스누아이랩, AI 머신비전 플랫폼 선보여",
+      "date": "2026-09-12",
+      "source_name": "한국경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBaUS1BQUl2X3gtazBQVXN2aVZUUTNzbVlEd0FrcHQ2NWF1R0QzWldOOWE5OFBBdndvd1FFNlZXak1MUjRkQURndlFUTnRsUUxNZGpwNHpmNUdZZw?oc=5",
+      "company_tag": "",
+      "final_score": 64.0,
+      "rule_score": 50.0,
+      "llm_score": 85.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "신규 AI 머신비전 플랫폼의 기술력을 분석하고 SaaS 기반의 차별화된 영업 전략을 강화해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 22,
+      "article_id": "LV-1367",
+      "category": "competitor",
+      "category_label": "경쟁사",
+      "title": "[AW 베트남 2026] 엠비젼, 자동차 부품 외관검사 AI 비전 시스템 선보인다",
+      "date": "2026-08-26",
+      "source_name": "헬로티",
+      "source_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB1UjZ3aTZkVFVIeExnZlA5bVVqanpBdDlVTDJZajM0b3dyNTVuQzVXNjdWOGdBN1JTRXpQTlVGQk9CcmZMd2dVYjlveXZFZmxLcWoxUWdVQmR6SkdhVm5R?oc=5",
+      "company_tag": "",
+      "final_score": 64.0,
+      "rule_score": 50.0,
+      "llm_score": 85.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "경쟁사의 해외 전시 참가 및 기술을 분석하여, 자사 SaaS의 차별화된 불량 탐지 기능을 홍보해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 23,
+      "article_id": "LV-1376",
+      "category": "competitor",
+      "category_label": "경쟁사",
+      "title": "클레로보틱스, 중기부 ‘글로벌 팁스’ 선정 ··· AI·3D 머신비전 기술 고도화",
+      "date": "2026-08-18",
+      "source_name": "데이터넷",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE04bDVOd2pYaEhhcmpCbHBZdk1KODlQRHN1TmJEQUJ2MzhHOE5vSmg1VVZOaTNXN0xIQWx5ai0zRVJ4YmpyeTJzUWgzcHJSczZJTDQ1UnZrV2Q1MU5wNFp5Zk00SjhGQ2J1UHpjYw?oc=5",
+      "company_tag": "",
+      "final_score": 63.9,
+      "rule_score": 49.9,
+      "llm_score": 85.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "경쟁사의 기술 고도화에 대응해 자사 비전 SaaS의 기술력을 높이고 정부 지원 사업 신청을 준비해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 24,
+      "article_id": "LV-1090",
+      "category": "policy",
+      "category_label": "정책",
+      "title": "[특집/향후 10년 한국의 수출을 이끌 차세대 산업 시리즈 No.14 스마트팩토리] “공장이 스스로 판단하고 움직인다”…AI 스마트팩토리, 한국 수출의 새 성장엔진",
+      "date": "2026-09-19",
+      "source_name": "코리아포스트 한글판",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE05WE83bWV6M3ktak1jZ0xoQnp2cGgxazFmWDZydzR3Nk1zQ050X002ei1WeVNJS1NYamc0TkIzR1YzcHlSX25MVDhHTENUWjVsVy1pSDFwUlJVTllpSTNFTFhxR1dLQ2pKUkJRNm5B?oc=5",
+      "company_tag": "",
+      "final_score": 63.5,
+      "rule_score": 60.0,
+      "llm_score": 68.8,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 4.0,
+        "urgency": 3.0
+      },
+      "reason": "AI 스마트팩토리 국책 사업 및 산업 동향에 맞춰 중소·중견기업 맞춤형 검사 SaaS 홍보를 강화해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 25,
+      "article_id": "LV-1368",
+      "category": "competitor",
+      "category_label": "경쟁사",
+      "title": "바이슨, 이차전지 분야 복수 기업과 AI 비전검사 PoC 진행 - 머니투데이",
+      "date": "2026-08-03",
+      "source_name": "mt.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5fVUJvU0JUbjRnSGlhZkxLN1UzM3g1cl95UWV6UHNyb3RCOHNuSGtsRm5RUjBQTjlld3RVclMybDZPUE1TYXBILWp0OTBHOTRIRlJiTHZDT1hyU3RybG50OHR6Z0FMaFFxdEw0btIBckFVX3lxTE4zQllyVlYwSXJ6b2kteG1uN0RPU0YzQXRlMGxVVlVOT1JfdnhhTjVIMlg5cmh1Wjc3N0VrQWFJLWVwX0prcHZzZzl6cTE2bTJNZGx0bXZYeFk5eHNvSnFLRkVKbHhaa1FpbjdsTnZoQVo0UQ?oc=5",
+      "company_tag": "",
+      "final_score": 63.3,
+      "rule_score": 48.9,
+      "llm_score": 85.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "이차전지 분야의 비전 검사 적용 사례를 벤치마킹하고, 관련 제조업체 대상 PoC 영업을 강화해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 26,
+      "article_id": "LV-1069",
+      "category": "policy",
+      "category_label": "정책",
+      "title": "AI·스마트공장 산업 첫 공식 분류…스마트제조기업 체계 육성",
+      "date": "2026-07-23",
+      "source_name": "매일일보",
+      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA0OGF0WG5kNzlhcnBOUFplSkNVekdybWJLRzhMdHp1ZlVnbXdzM0cyWjV5NGJZSGpBUDl3YUdyYkliTXZjRXVPUzZRRGltanIyWGxTQm8xOGNGX01TXzVwU25QM1TSAWhBVV95cUxPZVAtUkFHZm5KdkRUN2xrM2RNYUl3QWQ3Mkdna2VmY3NINEt0bmJHS0FkZjZmWWxtYnBra0c4a1o3MGVnU0VaMVRwLTJUcmlHa2V0SGlqZ1ozSjYtckNZWmxkMXZ0b0hzVg?oc=5",
+      "company_tag": "",
+      "final_score": 62.9,
+      "rule_score": 48.1,
+      "llm_score": 85.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "스마트제조 공식 분류체계 편입에 대비하여 정부의 스마트공장 보급 지원 사업 참여 및 인증 획득을 준비해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 27,
+      "article_id": "LV-1073",
+      "category": "policy",
+      "category_label": "정책",
+      "title": "중기부, ‘스마트제조기술산업 특수분류’ 제정…AI 제조혁신 정책기반 마련 - 조선비즈",
+      "date": "2026-07-23",
+      "source_name": "Chosunbiz",
+      "source_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNTWxNc2tRQ0ZLWGdnRThnRXo1U2RHUmZpdEdEVTNOZXZZQmdwaHVBeVdHZThLRkFvM201MDE1R0o0dnNWUGdWdHJSQkdOQVhUVndLMDdMQXQ4bml4WHRjOVBjQk9EeE13eDJIRjBHTHZyV2hhQ2o0R0wzYzBXaXBGdktabDNIcjZBS0I0ZE4wY1rSAaQBQVVfeXFMTmNHeFJVMjVkVVRLOU5hZnBHSkxwU3dmT3hEYU1ubm1KWlhSdUNVZkhPeFF6NXUzX0FuUTgxSTM0OFR6eWVMOGpxWkRRRl9FcEhYWHJ3aFNFeGU0M1pNaFZqM0llUUJCVkM5TXJRUG1hQTJlRHQxOU5BMlFTSlVKa19MZFB3UXlpUnV1M3UxLTdES21kWUFfeXFLUGx6WU9HOWhhZk0?oc=5",
+      "company_tag": "",
+      "final_score": 62.9,
+      "rule_score": 48.1,
+      "llm_score": 85.0,
+      "llm": {
+        "relevance": 5.0,
+        "importance": 4.0,
+        "urgency": 4.0
+      },
+      "reason": "정부의 스마트제조 육성 정책 수혜를 받기 위해 자사 솔루션을 공식 분류 기준에 맞춰 정비하고 지원을 신청해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 28,
+      "article_id": "LV-0159",
+      "category": "market",
+      "category_label": "시장",
+      "title": "제조 AI 도입률 0.1% 시대, 스마트팩토리 데이터 품질 해법은?",
+      "date": "2026-06-26",
+      "source_name": "한국데이터경제신문",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1ZYVQwZmJDZndhbm5nVFdReFI4LUxjS081Mk41amxvYXFKUi04NXJRc1RoZEZMNnlfMUhCSl95bnd1VnpXVnNKc3V3WWY3SENVWGVxdTZBeF83Q3NnMkZrUnhreGoyVHdQZ0dyTm9iT3fSAXRBVV95cUxPYXNMaS1vbzcybUJJdm55U0EwdXNLanlJZWd3aGZ0aXNjcU1ZZHZWRzhzZHpSUGViZGNxZ25HT25SZmJWMWNYRUFOYXh3ZUlzODFSel9JYkN0clhCVVN0M3V4eFJsOGR6aUFfeGpLXzRpb056cg?oc=5",
+      "company_tag": "",
+      "final_score": 62.8,
+      "rule_score": 58.8,
+      "llm_score": 68.8,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 4.0,
+        "urgency": 3.0
+      },
+      "reason": "시장의 제조 AI 도입 데이터 장애 요인을 분석해 품질 리포트 자동화 세일즈에 활용해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 29,
+      "article_id": "LV-1189",
+      "category": "market",
+      "category_label": "시장",
+      "title": "55년 전통 천안 호두과자에 AI 입힌다…대신제과, 스마트공장 전환",
+      "date": "2026-09-08",
+      "source_name": "goodmorningcc.com",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5XOTdObTRCT3ZPUTZmR2plS1h3bTZsdTJoVGJLdGpKVndUTUk2UG5ZeU9reHcwS0Q0VVVhTjMwRG9XMnNYODRSaVZyWnhGc3hmcFdudm84UW9LUDZCZ0IwUDdwdEMzSnZVenlaandSa2gwZw?oc=5",
+      "company_tag": "",
+      "final_score": 61.5,
+      "rule_score": 62.5,
+      "llm_score": 60.0,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 3.0,
+        "urgency": 3.0
+      },
+      "reason": "식품 제조 분야의 스마트공장 전환 사례를 참고해 중소 식품 제조업체 대상 비전 검사 영업을 확대해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    },
+    {
+      "rank": 30,
+      "article_id": "LV-1300",
+      "category": "competitor",
+      "category_label": "경쟁사",
+      "title": "마키나락스, 에너토크와 AI 네이티브 팩토리 구축…국내 첫 제조 AX 전 주기 실증",
+      "date": "2026-07-24",
+      "source_name": "paxetv.com",
+      "source_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFByeXR1ODRLMUllVHBLNE05SjgtU3k4aGpYYjNyUHc1NkQzRTctUlY1MDdIT254ZkI5M015dzlHYXJBazBwVVRVS2pQd1NtaUc5VkZ1Zk9nQjRhYV90bFBLTFJMcWFtWlVr?oc=5",
+      "company_tag": "마키나락스",
+      "final_score": 57.9,
+      "rule_score": 50.7,
+      "llm_score": 68.8,
+      "llm": {
+        "relevance": 4.0,
+        "importance": 4.0,
+        "urgency": 3.0
+      },
+      "reason": "제조 AX 시장 내 타사 실증 사례를 분석하고 AI 비전 검사 분야에 특화된 차별화 포인트를 강화해야 합니다.",
+      "reason_source": "llm",
+      "data_origin": "live"
+    }
+  ]
+}

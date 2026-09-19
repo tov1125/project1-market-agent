@@ -1,0 +1,19 @@
+{
+  "input": "/Users/tov/Documents/Ai_Project/study_DGU_Antigravity_260919/project1-market-agent/data/raw/crawled_market_news.csv",
+  "output": "/Users/tov/Documents/Ai_Project/study_DGU_Antigravity_260919/project1-market-agent/data/processed/cleaned_market_news.csv",
+  "raw_rows": 1586,
+  "text_cells_cleaned": 34,
+  "removed_empty_title": 0,
+  "removed_short_title": 0,
+  "removed_empty_url": 0,
+  "filled_short_content": 0,
+  "filled_empty_summary": 0,
+  "date_reformatted": 0,
+  "date_invalid": 0,
+  "removed_full_duplicate": 0,
+  "removed_url_duplicate": 0,
+  "removed_title_duplicate": 0,
+  "reassigned_article_id": 0,
+  "final_rows": 1586,
+  "verification_problems": []
+}
